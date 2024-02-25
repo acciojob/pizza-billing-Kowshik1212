@@ -11,7 +11,7 @@ public class Pizza {
     boolean isCheeseAdded;
     boolean isToppingsAdded;
     boolean isBagAdded;
-    boolean isBillGiven;
+    int isBillGiven;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -22,7 +22,7 @@ public class Pizza {
         isCheeseAdded = false;
         isToppingsAdded = false;
         isBagAdded = false;
-        isBillGiven = false;
+        isBillGiven = 0;
         if(isVeg)
             basePrice = 300;
         else
@@ -68,8 +68,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(!isBillGiven) {
-            isBillGiven = true;
+        if(isBillGiven<2) {
+            isBillGiven++;
             bill+="Base Price Of The Pizza: "+basePrice+"\n";
             if(cheesePrice!=0)
                 bill+="Extra Cheese Added: "+cheesePrice+"\n";
